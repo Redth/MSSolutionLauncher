@@ -30,5 +30,20 @@
 	<string>public.app-category.productivity</string>
 	<key>CFBundleIconFile</key>
 	<string>Icon</string>
+	<key>CFBundleDocumentTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeExtensions</key>
+			<array>
+				<string>sln</string>
+			</array>
+			<key>CFBundleTypeName</key>
+			<string>.NET Solution</string>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleTypeIconFile</key>
+			<string>Icon</string>
+		</dict>
+	</array>
 </dict>
 </plist>
