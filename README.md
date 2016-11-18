@@ -19,7 +19,7 @@ If you associate all .sln files with MS Solution Launcher, any time you double c
  1. Find a .sln file in Finder
  2. Right click the .sln file and Get Info (or highlight the file and cmd + i
  3. Under the Open With section, click the drop-down list and click Choose
- 4. Navigate to and select Xamarin Studio Launcher
+ 4. Navigate to and select MS Solution Launcher
  5. Click Change All
  
  
