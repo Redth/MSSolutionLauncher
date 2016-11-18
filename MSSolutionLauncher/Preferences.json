@@ -1,0 +1,4 @@
+﻿{
+	"OpenWith" : "Ask",
+	"OpenWithPossibleValues" : [ "Ask", "Visual Studio", "Xamarin Studio" ]
+}
