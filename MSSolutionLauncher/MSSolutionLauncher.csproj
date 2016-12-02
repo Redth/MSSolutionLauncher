@@ -29,6 +29,7 @@
     <UseRefCounting>true</UseRefCounting>
     <PlatformTarget>x86</PlatformTarget>
     <PackageSigningKey>3rd Party Mac Developer Installer</PackageSigningKey>
+    <MonoBundlingExtraArgs>--registrar:static</MonoBundlingExtraArgs>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <DebugType>pdbonly</DebugType>
