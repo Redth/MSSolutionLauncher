@@ -82,9 +82,25 @@ namespace SolutionLauncher
             else if (openWith == SlnOpenWith.XamarinStudio)
                 appId = XamarinStudioBundleId;
 
-            // If no bundle ids, just don't launch anything
-            if (string.IsNullOrEmpty(appId))
-                return;
+
+			// If we didn't find a bundle ID from our choice or preferences
+			if (string.IsNullOrEmpty(appId))
+			{
+				// First let's look for VS4Mac
+				appId = VisualStudioBundleId;
+
+				// If VS4Mac doesn't exist, try falling back explicitly to XS
+				if (string.IsNullOrEmpty(appId))
+					appId = XamarinStudioBundleId;
+
+				// If neither exist, we have no IDE installed so don't bother trying
+				// to launch anything, just return.
+				if (string.IsNullOrEmpty(appId))
+				{
+					Alert("No IDE Found", "Neither Visual Studio for Mac or Xamarin Studio could be found.  Please make sure at least one of them is installed in your Applications folder");
+					return;
+				}
+			}
 
             var args = new List<string> {
                 "-n",        // New Instance
@@ -219,5 +235,16 @@ namespace SolutionLauncher
 
             return null;
         }
+
+		public static void Alert(string title, string message)
+		{
+			var alert = new NSAlert();
+			alert.InformativeText = message;
+			alert.MessageText = title;
+
+			alert.AddButton("OK");
+
+			alert.RunModal();
+		}
     }
 }
